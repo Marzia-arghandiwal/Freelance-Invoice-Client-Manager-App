@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Freelance Manager</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="clients.html" class="active">Clients</a></li>
+                <li><a href="invoices.html">Invoices</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="client-management">
+            <h2>Client Management</h2>
+            
+            <div class="form-section">
+                <h3 id="form-title">Add New Client</h3>
+                <form id="client-form">
+                    <input type="hidden" id="client-id">
+                    <div class="form-group">
+                        <label for="client-name">Name *</label>
+                        <input type="text" id="client-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-email">Email *</label>
+                        <input type="email" id="client-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-company">Company Name</label>
+                        <input type="text" id="client-company">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-notes">Notes</label>
+                        <textarea id="client-notes" rows="3"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="submit-btn">Add Client</button>
+                        <button type="button" id="cancel-btn" style="display: none;">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="clients-list">
+                <h3>All Clients</h3>
+                <div id="clients-container">
+                    <!-- Clients will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/clients.js"></script>
+</body>
+</html>

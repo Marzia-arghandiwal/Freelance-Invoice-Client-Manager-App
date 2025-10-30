@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Freelance Manager</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="invoices.html">Invoices</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="dashboard">
+            <h2>Dashboard Overview</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Clients</h3>
+                    <p id="total-clients">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Invoices</h3>
+                    <p id="total-invoices">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Revenue</h3>
+                    <p id="total-revenue">$0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Paid Invoices</h3>
+                    <p id="paid-invoices">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Unpaid Invoices</h3>
+                    <p id="unpaid-invoices">0</p>
+                </div>
+            </div>
+
+            <div class="quote-section">
+                <h3>Motivational Quote</h3>
+                <div class="quote-card">
+                    <p id="quote-text">Loading quote...</p>
+                    <p id="quote-author"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/data.js"></script>
+    <script type="module">
+        import { loadDashboardData, loadRandomQuote } from './js/utils.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            loadDashboardData();
+            loadRandomQuote();
+        });
+    </script>
+</body>
+</html>

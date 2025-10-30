@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Freelance Manager</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="invoices.html" class="active">Invoices</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="invoice-management">
+            <h2>Invoice Management</h2>
+            
+            <div class="form-section">
+                <h3 id="invoice-form-title">Create New Invoice</h3>
+                <form id="invoice-form">
+                    <input type="hidden" id="invoice-id">
+                    <div class="form-group">
+                        <label for="invoice-client">Client *</label>
+                        <select id="invoice-client" required>
+                            <option value="">Select a client</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="invoice-title">Service Title *</label>
+                        <input type="text" id="invoice-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="invoice-description">Description</label>
+                        <textarea id="invoice-description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="invoice-amount">Amount ($) *</label>
+                        <input type="number" id="invoice-amount" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="invoice-date">Date *</label>
+                        <input type="date" id="invoice-date" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="invoice-submit-btn">Create Invoice</button>
+                        <button type="button" id="invoice-cancel-btn" style="display: none;">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="invoices-list">
+                <h3>All Invoices</h3>
+                <div id="invoices-container">
+                    <!-- Invoices will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/invoices.js"></script>
+</body>
+</html>
